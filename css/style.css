@@ -1,0 +1,17 @@
+#home .incomes-info{padding:10px 0 5px 0;}
+#home section .passive-incomes{padding:15px;}
+#home section .passive-incomes.row{margin:0;}
+#home section .actions{padding:15px;}
+#home section a.btn-floating{margin:5px;}
+#home section .options{margin:15px 0;}
+#home section .options .btn{width:100%;}
+
+#add-incomes,#add-expenses,#add-savings{max-height:90% !important;height:90% !important;}
+/*#add-incomes form .selectable{margin-bottom:50px;}*/
+
+@media handheld, only screen and (min-width: 451px) {
+	#add-incomes h5{font-size:2em;}
+}
+@media handheld, only screen and (min-width: 751px) {
+	#add-incomes h5{font-size:3em;}
+}

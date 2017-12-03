@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Administrador de Flujo de dinero 1.0</title>
+		<meta name="viewport" content="maximum-scale=1, width=device-width, user-scalable=no" />
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="css/materialize.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="screen">
+			<div class="page" id="home">
+				<header>
+					<div class="main-nav">
+						<div class="navbar-fixed">
+							<nav class="orange accent-4">
+								<div class="nav-wrapper">
+									<a href="#" class="brand-logo left" id="name">Nombre</a>
+									<a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="fa fa-bars right"></i></a>
+									<ul class="right hide-on-med-and-down">
+										<li><a href="#"><i class="fa fa-bars right"></i></a></li>
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+					<div class="incomes-info center-align">
+						<div class="chip hoverable">
+							<img src="img/pig.svg" alt="Contact Person">
+							<span id="available">0.00</span>
+						</div>
+					</div>
+				</header>
+				<section class="">
+					<div class="passive-incomes row blue-grey lighten-5">
+						<div class="col s9">
+							<div class="progress">
+								<div class="determinate orange accent-4" style="width: 0%"></div>
+							</div>
+						</div>
+						<div class="col s3 right-align">
+							0%
+						</div>
+					</div>
+					<div class="blue-grey darken-4 actions center-align">
+						<a href="#add-incomes" class="btn-floating btn-large waves-effect waves-light blue lighten-1 modal-trigger"><i class="fa fa-credit-card-alt left"></i> Ingresos</a>
+						
+						<a href="#add-expenses" class="btn-floating btn-large waves-effect waves-light red darken-4 modal-trigger" title="Egresos innecesarios"><i class="fa fa-cart-arrow-down left"></i> Gastos</a>
+						
+						<a href="#add-savings" class="btn-floating btn-large waves-effect waves-light orange accent-4 modal-trigger" title="Egresos innecesarios"><i class="fa fa-lock left"></i> Ahorros</a>
+						
+						<!--<a href="#" class="btn-floating btn-large waves-effect waves-light green accent-3"><i class="fa fa-heart left"></i> Donaciones</a>
+						
+						<a href="#" class="btn-floating btn-large waves-effect waves-light deep-purple lighten-1"><i class="fa fa-university left"></i> Mercado</a>-->
+					</div>
+					<div class="options row">
+						<div class="col s5">
+							<a href="#" class="btn orange accent-4">Estado</a>
+						</div>
+						<div class="col s2">
+							<img src="img/refresh-button.png" alt="" class="responsive-img">
+						</div>
+						<div class="col s5">
+							<a href="#" class="btn orange accent-4">Balance</a>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		
+		<div id="add-incomes" class="modal bottom-sheet">
+			<div class="modal-content">
+				<div class="row">
+					<div class="col s4 m2 l1">
+						<img src="img/pig.svg" alt="" class="">
+					</div>
+					<h5 class="col s8 m10 l11">Agregar Ingreso</h5>
+				</div>
+				<form method="post" name="1">
+					<div class="row selectable">
+						<div class="input-field col s12">
+							<select name="type" required>
+								<option value="" disabled selected>Selecciona una opción</option>
+								<option value="1">Sueldo</option>
+								<option value="2">Regalo</option>
+								<option value="3">Otro</option>
+							</select>
+							<label>Tipo de Ingreso</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<i class="fa fa-asterisk prefix"></i>
+							<input id="icon_prefix" type="text" class="validate" name="desc" required>
+							<label for="icon_prefix">Describe tu ingreso</label>
+						</div>
+						<div class="input-field col s12">
+							<i class="fa fa-money prefix"></i>
+							<input id="icon_telephone" type="number" step="0.01" class="validate" name="amount" required>
+							<label for="icon_telephone">Monto del ingreso</label>
+						</div>
+						<div class="input-field col s12">
+							<i class="fa fa-calendar prefix"></i>
+							<input type="text" class="datepicker" name="date" required>
+							<label for="icon_telephone">Fecha del ingreso</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s12">
+							<button class="btn col s12" type="submit">Agregar Ingreso</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+			</div>
+		</div>
+		
+		<div id="add-expenses" class="modal bottom-sheet">
+			<div class="modal-content">
+				<div class="row">
+					<div class="col s4 m2 l1">
+						<img src="img/wolf.svg" alt="" class="">
+					</div>
+					<h5 class="col s8 m10 l11">Agregar Gasto</h5>
+				</div>
+				<form method="post" name="1">
+					<div class="row selectable">
+						<div class="input-field col s12">
+							<select name="type" required>
+								<option value="" disabled selected>Selecciona una opción</option>
+								<option value="1">Hogar</option>
+								<option value="2">Impuestos</option>
+								<option value="3">Supervicencia</option>
+								<option value="4">Ocio/Vicio</option>
+								<option value="5">Cultura</option>
+								<option value="6">Otros</option>
+							</select>
+							<label>Tipo de Gasto</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<i class="fa fa-asterisk prefix"></i>
+							<input id="icon_prefix" type="text" class="validate" name="desc" required>
+							<label for="icon_prefix">Describe tu gasto</label>
+						</div>
+						<div class="input-field col s12">
+							<i class="fa fa-money prefix"></i>
+							<input id="icon_telephone" type="number" step="0.01" class="validate" name="amount" required>
+							<label for="icon_telephone">Monto del gasto</label>
+						</div>
+						<div class="input-field col s12">
+							<i class="fa fa-calendar prefix"></i>
+							<input type="text" class="datepicker" name="date" required>
+							<label for="icon_telephone">Fecha del ingreso</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s12">
+							<button class="btn col s12" type="submit">Agregar Ingreso</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+			</div>
+		</div>
+		
+		<div id="add-savings" class="modal bottom-sheet">
+			<div class="modal-content">
+				<div class="row">
+					<div class="col s4 m2 l1">
+						<img src="img/pig.svg" alt="" class="">
+					</div>
+					<h5 class="col s8 m10 l11">Agregar Ahorro</h5>
+				</div>
+				<form method="post" name="1">
+					<div class="row">
+						<div class="input-field col s12">
+							<i class="fa fa-money prefix"></i>
+							<input id="icon_telephone" type="number" step="0.01" class="validate" name="amount" required>
+							<label for="icon_telephone">Monto que ahorrarás</label>
+						</div>
+						<div class="input-field col s12">
+							<i class="fa fa-calendar prefix"></i>
+							<input type="text" class="datepicker" name="date" required>
+							<label for="icon_telephone">Fecha</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s12">
+							<button class="btn col s12" type="submit">Agregar Ahorro</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+			</div>
+		</div>
+		
+		<div id="add-first-data" class="modal">
+			<div class="modal-content">
+				<p>Inicia diciéndome tu nombre y la cantidad de dinero disponible actualmente</p>
+				<form>
+					<div class="row">
+						<div class="input-field col s12">
+							<i class="fa fa-asterisk prefix"></i>
+							<input id="icon_prefix" type="text" class="validate" name="name" required>
+							<label for="icon_prefix">Tu nombre</label>
+						</div>
+						<div class="input-field col s12">
+							<i class="fa fa-money prefix"></i>
+							<input id="icon_telephone" type="number" step="0.01" class="validate" name="amount" required>
+							<label for="icon_telephone">Dinero disponible</label>
+						</div>
+						<button class="btn col s12" type="submit">Comenzar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		<script src="cordova.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="js/materialize.min.js"></script>
+		<script src="js/ui.js"></script>
+		<script src="js/fnc.js"></script>
+		<script src="js/db.js"></script>
+		<script src="js/ads.js"></script>
+	</body>
+</html>
