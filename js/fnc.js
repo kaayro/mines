@@ -1,7 +1,7 @@
 var fnc = {
 	ready: function(){
-		//document.addEventListener('deviceready',fnc.init,false);
-		fnc.init();
+		document.addEventListener('deviceready',fnc.init,false);
+		//fnc.init();
 	},
 	init: function(){
 		ui.init();
