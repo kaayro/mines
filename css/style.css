@@ -7,6 +7,7 @@
 #home section .options .btn{width:100%;}
 
 #add-incomes,#add-expenses,#add-savings{max-height:90% !important;height:90% !important;}
+#balance{max-height:100% !important;height:100% !important;}
 /*#add-incomes form .selectable{margin-bottom:50px;}*/
 
 @media handheld, only screen and (min-width: 451px) {

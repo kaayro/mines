@@ -1,7 +1,7 @@
 var fnc = {
 	ready: function(){
-		document.addEventListener('deviceready',fnc.init,false);
-		//fnc.init();
+		//document.addEventListener('deviceready',fnc.init,false);
+		fnc.init();
 	},
 	init: function(){
 		ui.init();
@@ -9,12 +9,14 @@ var fnc = {
 		
 		var nm = db.ls.getItem('name');
 		var av = db.ls.getItem('available');
+		var sv = db.ls.getItem('savings');
 		if(nm == undefined || av == undefined)
 			$('#add-first-data').modal('open');
 		else{
 			fnc.reloadAvailable();
-			$('#name').text(db.ls.getItem('name'));
+			$('#name').text(nm);
 		}
+		
 		
 		//ads
 		ads.init();
@@ -52,6 +54,7 @@ var fnc = {
 		else{
 			$('.modal').modal('close');
 			$(this)[0].reset();
+			ui.getToday();
 			fnc.reloadAvailable();
 		}
 	},
@@ -68,6 +71,7 @@ var fnc = {
 		else{
 			$('.modal').modal('close');
 			$(this)[0].reset();
+			ui.getToday();
 			fnc.reloadAvailable();
 		}
 	},
@@ -82,13 +86,13 @@ var fnc = {
 		else{
 			$('.modal').modal('close');
 			$(this)[0].reset();
+			ui.getToday();
 			fnc.reloadAvailable();
 		}
 	},
 	reloadAvailable: function(){
-		var n = parseFloat(db.ls.getItem('available'));
-		var am = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(n);
-		$('#available').text(am);
+		db.getAvailableSum();
+		db.getSavingsSum();
 	}
 };
 

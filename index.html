@@ -18,18 +18,28 @@
 							<nav class="orange accent-4">
 								<div class="nav-wrapper">
 									<a href="#" class="brand-logo left" id="name">Nombre</a>
-									<a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="fa fa-bars right"></i></a>
+									<!--<a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="fa fa-bars right"></i></a>
 									<ul class="right hide-on-med-and-down">
 										<li><a href="#"><i class="fa fa-bars right"></i></a></li>
-									</ul>
+									</ul>-->
 								</div>
 							</nav>
 						</div>
 					</div>
 					<div class="incomes-info center-align">
-						<div class="chip hoverable">
-							<img src="img/pig.svg" alt="Contact Person">
-							<span id="available">0.00</span>
+						<div class="row">
+							<div class="col s6">
+								<div class="chip hoverable">
+									<img src="img/coin.png" alt="Contact Person">
+									<span id="available">0.00</span>
+								</div>
+							</div>
+							<div class="col s6">
+								<div class="chip hoverable">
+									<img src="img/pig.svg" alt="Contact Person">
+									<span id="savings">0.00</span>
+								</div>
+							</div>
 						</div>
 					</div>
 				</header>
@@ -57,13 +67,13 @@
 					</div>
 					<div class="options row">
 						<div class="col s5">
-							<a href="#" class="btn orange accent-4">Estado</a>
+							<a href="#" class="btn orange accent-4" id="btn-state">Estado</a>
 						</div>
 						<div class="col s2">
 							<img src="img/refresh-button.png" alt="" class="responsive-img">
 						</div>
 						<div class="col s5">
-							<a href="#" class="btn orange accent-4">Balance</a>
+							<a href="#" class="btn orange accent-4" id="btn-balance">Balance</a>
 						</div>
 					</div>
 				</section>
@@ -74,7 +84,7 @@
 			<div class="modal-content">
 				<div class="row">
 					<div class="col s4 m2 l1">
-						<img src="img/pig.svg" alt="" class="">
+						<img src="img/coin.png" alt="" class="responsive-img">
 					</div>
 					<h5 class="col s8 m10 l11">Agregar Ingreso</h5>
 				</div>
@@ -156,12 +166,12 @@
 						<div class="input-field col s12">
 							<i class="fa fa-calendar prefix"></i>
 							<input type="text" class="datepicker" name="date" required>
-							<label for="icon_telephone">Fecha del ingreso</label>
+							<label for="icon_telephone">Fecha del gasto</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col s12">
-							<button class="btn col s12" type="submit">Agregar Ingreso</button>
+							<button class="btn col s12" type="submit">Agregar Gasto</button>
 						</div>
 					</div>
 				</form>
@@ -222,6 +232,60 @@
 						<button class="btn col s12" type="submit">Comenzar</button>
 					</div>
 				</form>
+			</div>
+		</div>
+		
+		 <!-- Modal Structure -->
+		<div id="balance" class="modal modal-fixed-footer bottom-sheet">
+			<div class="modal-content">
+				<h4>Balance</h4>
+				<div class="row">
+					<div class="col s12">
+						<ul class="tabs">
+							<li class="tab col s3"><a class="active orange-text text-accent-4" href="#incomesBalance">Ingresos</a></li>
+							<li class="tab col s3"><a class="orange-text text-accent-4" href="#expensesBalance">Gastos</a></li>
+							<li class="tab col s3"><a class="orange-text text-accent-4" href="#savingsBalance">Ahorros</a></li>
+						</ul>
+					</div>
+					<div id="incomesBalance" class="col s12">
+						<table id="incomes-balance" class="bordered">
+							<thead>
+								<tr>
+									<th>Descripción</th>
+									<th>Monto</th>
+									<th>Fecha</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+					<div id="expensesBalance" class="col s12">
+						<table id="expenses-balance" class="bordered">
+							<thead>
+								<tr>
+									<th>Descripción</th>
+									<th>Monto</th>
+									<th>Fecha</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+					<div id="savingsBalance" class="col s12">
+						<table id="savings-balance" class="bordered">
+							<thead>
+								<tr>
+									<th>Monto</th>
+									<th>Fecha</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
 			</div>
 		</div>
 		
